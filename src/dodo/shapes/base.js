@@ -26,6 +26,10 @@ export default class Base {
     this.ctx = ctx;
     return this.ctx;
   }
+  move({ x = 0, y = 0 } = {}) {
+    this.x += x;
+    this.y += y;
+  }
   update({
     bgColor = this.bgColor,
     strokeColor = this.strokeColor,

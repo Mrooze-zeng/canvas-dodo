@@ -22,13 +22,19 @@ export default class Square extends Base {
     ctx.fillStyle = this.bgColor;
     ctx.fillRect(this.x, this.y, this.width, this.height);
 
+    this.drawActive();
+  }
+  drawActive() {
     this.active &&
-      this.drawActive([
+      super.drawActive([
         { x: this.x, y: this.y },
         { x: this.x + this.width, y: this.y },
         { x: this.x + this.width, y: this.y + this.height },
         { x: this.x, y: this.y + this.height },
       ]);
+  }
+  move(step = {}) {
+    super.move(step);
   }
   isPointInRegion(point = { x: 0, y: 0 }) {
     return (

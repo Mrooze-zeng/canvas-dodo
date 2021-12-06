@@ -26,9 +26,14 @@ export default class Circle extends Base {
     // ctx.stroke();
     this.active && this.drawActive();
   }
+  move(step = {}) {
+    super.move(step);
+  }
   drawActive() {
     const { ctx } = this;
     ctx.strokeStyle = this.activeStyle;
+    ctx.lineWidth = 2;
+
     ctx.stroke();
   }
   isPointInRegion(point = { x: 0, y: 0 }) {

@@ -25,9 +25,18 @@ export default class Polygon extends Base {
     }
     ctx.fill();
 
-    this.active && this.drawActive(this.points);
+    this.drawActive();
   }
-
+  move(step = { x: 0, y: 0 }) {
+    this.points.map((p) => {
+      p.x += step.x;
+      p.y += step.y;
+      return p;
+    });
+  }
+  drawActive() {
+    this.active && super.drawActive(this.points);
+  }
   cross(x = { x: 0, y: 0 }, y = { x: 0, y: 0 }, z = { x: 0, y: 0 }) {
     return (y.x - x.x) * (z.y - x.y) - (z.x - x.x) * (y.y - x.y);
   }

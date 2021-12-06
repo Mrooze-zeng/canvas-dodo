@@ -49,20 +49,29 @@ function App() {
     console.log("=------");
   });
 
-  const handleClick = function () {
-    console.log(dodo.shapes);
+  const handleMove = function (step = { x: 0, y: 0 }) {
+    dodo.moveActiveShape(step);
   };
+
+  const handleDelete = function () {
+    dodo.removeActiveShape();
+  };
+
+  dodo.addAll(s2, s1, s3, c1, p1);
 
   useEffect(() => {
     dodo.mount(ref.current);
-    dodo.addAll(s2, s1, s3, c1, p1);
-    console.log(dodo.shapes);
   });
 
   return (
-    <div ref={ref}>
-      hello world
-      <button onClick={handleClick}>delete</button>
+    <div ref={ref} style={{ padding: 15 }}>
+      <div style={{ paddingBottom: 15 }}>
+        <button onClick={() => handleMove({ x: 0, y: -1 })}>Up</button>
+        <button onClick={() => handleMove({ x: 1, y: 0 })}>right</button>
+        <button onClick={() => handleMove({ x: 0, y: 1 })}>Down</button>
+        <button onClick={() => handleMove({ x: -1, y: 0 })}>Left</button>
+        <button onClick={() => handleDelete()}>Delete</button>
+      </div>
     </div>
   );
 }
