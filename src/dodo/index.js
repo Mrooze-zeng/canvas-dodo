@@ -1,5 +1,5 @@
-import Base from "./base";
 import CanvasEvent from "./event";
+import Base from "./shapes/base";
 
 export default class Dodo {
   ratio = window.devicePixelRatio || 1;
@@ -40,11 +40,15 @@ export default class Dodo {
     const evt = new CanvasEvent({ type: event.type, data: { point } });
     for (let index = 0; index < this.shapes.length; index++) {
       const shape = this.shapes[this.shapes.length - 1 - index];
+      shape.setActive(false);
       if (evt.isStopPropagation) {
-        break;
+        continue;
       }
-      shape.trigger("click", evt);
+      if (shape.isPointInRegion(point)) {
+        shape.trigger("click", evt);
+      }
     }
+    this.redraw();
   }
   shapeDetect(shape = null) {
     if (!(shape instanceof Base)) {
@@ -53,8 +57,12 @@ export default class Dodo {
   }
   add(shape = null) {
     this.shapeDetect(shape);
-    this.shapes.push(shape);
-    this.draw(shape);
+    if (this.shapes.findIndex((s) => s === shape) < 0) {
+      this.shapes.push(shape);
+      this.draw(shape);
+    } else {
+      console.warn(`Fail to add shape, duplicate: ${shape.type}`);
+    }
   }
   addAll(...shapes) {
     shapes.forEach((s) => {
