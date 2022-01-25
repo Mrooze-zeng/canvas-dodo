@@ -11,6 +11,10 @@ export default class Dodo {
     this.canvas.height = height;
     this.canvas.style.width = width + "px";
     this.canvas.style.height = height + "px";
+    //for text inputs
+    this.canvas.tabIndex = 1000;
+    this.canvas.style.outline = "none";
+
     this.ctx = this.canvas.getContext("2d");
     this.ctx.scale(this.ratio, this.ratio);
     this.shapes = [];
@@ -81,6 +85,10 @@ export default class Dodo {
   }
   setupCanvasEvent() {
     this.canvas.addEventListener("click", this.handleClick.bind(this));
+    this.canvas.addEventListener("keydown", this.handleKeyDown.bind(this));
+  }
+  handleKeyDown(event) {
+    console.log(event.key);
   }
   handleClick(event) {
     const rect = this.canvas.getBoundingClientRect();
@@ -123,7 +131,7 @@ export default class Dodo {
   moveActiveShape(step = { x: 1, y: 0 }) {
     this.shapes.forEach((s) => {
       if (s.active) {
-        s.move(step);
+        s.moveBy(step);
       }
     });
     this.redraw();

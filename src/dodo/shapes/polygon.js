@@ -5,6 +5,7 @@ export default class Polygon extends Base {
     super(options);
     const { points = [] } = options;
     this.points = points;
+    this.at = points[0];
   }
   update(options = {}) {
     super.update(options);
@@ -27,12 +28,17 @@ export default class Polygon extends Base {
 
     this.drawActive();
   }
-  move(step = { x: 0, y: 0 }) {
+  moveBy(step = { x: 0, y: 0 }) {
     this.points.map((p) => {
       p.x += step.x;
       p.y += step.y;
       return p;
     });
+    return this;
+  }
+  moveTo(point = { x: 0, y: 0 }) {
+    this.moveBy({ x: point.x - this.at.x, y: point.y - this.at.y });
+    return this;
   }
   drawActive() {
     this.active && super.drawActive(this.points);

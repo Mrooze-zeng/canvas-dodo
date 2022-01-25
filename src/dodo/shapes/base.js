@@ -5,12 +5,13 @@ export default class Base {
   ctx = null;
   active = false;
   constructor({
-    name = "base",
+    name = this.constructor.name,
     bgColor = "#ff0000",
     strokeColor = "#00ff00",
     textColor = "#ffa500",
     lineWidth = 5,
     activeStyle = "#59c7f9",
+    at = { x: 0, y: 0 },
   } = {}) {
     this.name = name;
     this.bgColor = bgColor;
@@ -18,6 +19,7 @@ export default class Base {
     this.textColor = textColor;
     this.lineWidth = lineWidth;
     this.activeStyle = activeStyle;
+    this.at = at;
   }
   _uuid() {
     return Date.now().toString(36) + Math.random().toString(36).slice(2);
@@ -26,9 +28,16 @@ export default class Base {
     this.ctx = ctx;
     return this.ctx;
   }
-  move({ x = 0, y = 0 } = {}) {
-    this.x += x;
-    this.y += y;
+
+  moveBy({ x = 0, y = 0 } = {}) {
+    this.at.x += x;
+    this.at.y += y;
+    return this;
+  }
+  moveTo({ x = 0, y = 0 } = {}) {
+    this.at.x = x;
+    this.at.y = y;
+    return this;
   }
   update({
     bgColor = this.bgColor,
