@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/static/js/main.9aeed9ee.chunk.js",
-    "main.js.map": "/static/js/main.9aeed9ee.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.3441b569.js",
-    "runtime-main.js.map": "/static/js/runtime-main.3441b569.js.map",
-    "static/js/2.f6f71060.chunk.js": "/static/js/2.f6f71060.chunk.js",
-    "static/js/2.f6f71060.chunk.js.map": "/static/js/2.f6f71060.chunk.js.map",
-    "static/js/3.a4903739.chunk.js": "/static/js/3.a4903739.chunk.js",
-    "static/js/3.a4903739.chunk.js.map": "/static/js/3.a4903739.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.6dea0f05.chunk.css.map": "/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.f6f71060.chunk.js.LICENSE.txt": "/static/js/2.f6f71060.chunk.js.LICENSE.txt"
+    "main.css": "https://mrooze-zeng.github.io/canvas-dodo/static/css/main.6dea0f05.chunk.css",
+    "main.js": "https://mrooze-zeng.github.io/canvas-dodo/static/js/main.9aeed9ee.chunk.js",
+    "main.js.map": "https://mrooze-zeng.github.io/canvas-dodo/static/js/main.9aeed9ee.chunk.js.map",
+    "runtime-main.js": "https://mrooze-zeng.github.io/canvas-dodo/static/js/runtime-main.58573ed8.js",
+    "runtime-main.js.map": "https://mrooze-zeng.github.io/canvas-dodo/static/js/runtime-main.58573ed8.js.map",
+    "static/js/2.f6f71060.chunk.js": "https://mrooze-zeng.github.io/canvas-dodo/static/js/2.f6f71060.chunk.js",
+    "static/js/2.f6f71060.chunk.js.map": "https://mrooze-zeng.github.io/canvas-dodo/static/js/2.f6f71060.chunk.js.map",
+    "static/js/3.a4903739.chunk.js": "https://mrooze-zeng.github.io/canvas-dodo/static/js/3.a4903739.chunk.js",
+    "static/js/3.a4903739.chunk.js.map": "https://mrooze-zeng.github.io/canvas-dodo/static/js/3.a4903739.chunk.js.map",
+    "index.html": "https://mrooze-zeng.github.io/canvas-dodo/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "https://mrooze-zeng.github.io/canvas-dodo/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.f6f71060.chunk.js.LICENSE.txt": "https://mrooze-zeng.github.io/canvas-dodo/static/js/2.f6f71060.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.3441b569.js",
+    "static/js/runtime-main.58573ed8.js",
     "static/js/2.f6f71060.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
     "static/js/main.9aeed9ee.chunk.js"
