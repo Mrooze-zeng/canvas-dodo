@@ -71,11 +71,7 @@ function App() {
 
   console.log(t1);
 
-  dodo.addAll(
-    //s2, s1, s3, c1,
-    p1,
-    // t1,
-  );
+  dodo.addAll(s2, s1, s3, c1, p1, t1);
 
   useEffect(() => {
     dodo.mount(ref.current);
